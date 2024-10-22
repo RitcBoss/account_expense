@@ -1,0 +1,39 @@
+CREATE DATABASE income_expense_db;
+USE income_expense_db;
+
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE accounts (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  account_name VARCHAR(255) NOT NULL,
+  user_id INT,
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE expense_types (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  type_name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE transactions (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT,
+  account_id INT,
+  type_id INT,
+  amount DECIMAL(10, 2) NOT NULL,
+  note VARCHAR(255),
+  slip VARCHAR(255),
+  is_income TINYINT NOT NULL,
+  transaction_date DATE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (account_id) REFERENCES accounts(id),
+  FOREIGN KEY (type_id) REFERENCES expense_types(id)
+);
+
+INSERT INTO expense_types (type_name) VALUES ('อาหาร'), ('เดินทาง'), ('ที่พัก'), ('บันเทิง'), ('การศึกษา'), ('อื่นๆ');
