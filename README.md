@@ -3,6 +3,16 @@
 ## Description
 The Income and Expense Management System is designed to assist users in tracking and controlling their daily spending. It allows users to record financial data and effectively manage various accounts.
 
+## Preview
+
+![App Screenshot](https://i.postimg.cc/cxRCc66c/preview-1.png)
+
+![App Screenshot](https://i.postimg.cc/V1wdk9HZ/preview-2.png)
+
+![App Screenshot](https://i.postimg.cc/3YJNg8hg/preview-3.png)
+
+![App Screenshot](https://i.postimg.cc/NYxL9y3s/preview-4.png)
+
 ## Features
 - **Login**: Secure login functionality.
 - **Account Management**: Add and delete spending accounts as needed.
