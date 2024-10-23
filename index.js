@@ -43,7 +43,7 @@ const { ensureAuthenticated } = require('./middleware/ensureAuthenticated')
 
 
 app.get('/', indexController)
-app.get('/account', mainController)
+app.get('/account', ensureAuthenticated, mainController)
 app.get('/register', redirectifAuth, registerController)
 app.get('/login', redirectifAuth, loginUserController)
 app.get('/account/transactions/:accountId', transactionController.getTransactions)
